@@ -96,15 +96,36 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 			[singleTap requireGestureRecognizerToFail:doubleTap];
 			[view addGestureRecognizer:doubleTap];
             
-            /* ルートビュー */
-            rootView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIN_SIZE.width, WIN_SIZE.height - 20)];
+            /**************************** ここからビューをカスタマイズ ********************************/
+            rootView = [[UIView alloc] initWithFrame:CGRectMake(0, 74, 320, 320)]; // xibのframe
             rootView.backgroundColor = [UIColor clearColor];
             [self.view addSubview:rootView];
             
+            // 撮った画像を確保する
             tempImageView = [[UIImageView alloc] init];
-            bounds.origin.y = bounds.origin.y + 74;
-            tempImageView.frame = CGRectMake(0,74,320,320);
+            tempImageView.frame = CGRectMake(0,0,320,320);
             [rootView addSubview:tempImageView];
+            
+            UIToolbar *toolbarBottom = [[UIToolbar alloc] initWithFrame:CGRectMake(0, WIN_SIZE.height-54, WIN_SIZE.width, 54)];
+            toolbarBottom.barStyle = UIBarStyleBlack;
+            toolbarBottom.tintColor = [UIColor colorWithRed:0.961 green:0.961 blue:0.961 alpha:1.0];
+            
+            UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
+                                                                                        target:self
+                                                                                        action:@selector(pressedAVDelete:)];
+            
+            UIBarButtonItem *adjustflex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                        target:nil
+                                                                                        action:nil];
+            
+            UIBarButtonItem *camera = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera
+                                                                                    target:self
+                                                                                    action:@selector(pressedAVTake:)];
+            
+            NSArray *buttons = [NSArray arrayWithObjects:adjustflex,camera,adjustflex,deleteButton,nil];
+            [toolbarBottom setItems:buttons];
+            [self.view addSubview:toolbarBottom];
+            /************************************************************************************/
         }
     }
 }
@@ -114,6 +135,8 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - -カメラ-
 
 - (NSString *)stringForFocusMode:(AVCaptureFocusMode)focusMode
 {
@@ -134,8 +157,12 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 	return focusString;
 }
 
-#pragma mark - -カメラ-
-- (void)Camera
+- (void)pressedAVDelete:(id)sender
+{
+    tempImageView.image = nil;
+}
+
+- (void)pressedAVTake:(id)sender
 {
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -143,23 +170,24 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
         return;
     }
     
-    imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    imagePicker.allowsEditing = NO;
-    imagePicker.delegate = self;
-    imagePicker.showsCameraControls = NO;
-    imagePicker.view.userInteractionEnabled = YES;
-    imagePicker.view.frame = CGRectMake(0, 0, WIN_SIZE.width, WIN_SIZE.height);
-    [self.view addSubview:imagePicker.view];
+    /* フラッシュをたく */
+    UIView *flashView = [[UIView alloc] initWithFrame:rootView.frame];
+    [flashView setBackgroundColor:[UIColor whiteColor]];
+    [[[self view] window] addSubview:flashView];
+    
+    [UIView animateWithDuration:.4f
+                     animations:^{
+                         [flashView setAlpha:0.f];
+                     }
+                     completion:^(BOOL finished){
+                         [flashView removeFromSuperview];
+                     }
+     ];
+    
+    /* 写真のイメージ画像を取得 */
+    [[self captureManager] captureStillImage:tempImageView];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    tempImageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-}
 
 - (void)targetImage:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo
 {

@@ -286,15 +286,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 - (void)captureStillImage:(UIImageView*)tempView
 {
-    NSLog(@"capture");
+    NSLog(@"captured");
 
     UIWindow *mainWindow = [[UIApplication sharedApplication] keyWindow];
-    
-//    loadView = [DisplayUtil createLoadingView:CGRectMake(0, 44, 320, 426)];
-//    [mainWindow addSubview:loadView];
-//    
-//    indicator = [DisplayUtil createIndicator:@"Please Wait..."];
-//	[mainWindow addSubview:indicator];
     
     AVCaptureConnection *stillImageConnection = [AVCamUtilities connectionWithMediaType:AVMediaTypeVideo fromConnections:[[self stillImageOutput] connections]];
     if ([stillImageConnection isVideoOrientationSupported])
@@ -312,7 +306,8 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 															 };
 															 
                                                              
-															 if (imageDataSampleBuffer != NULL) {
+															 if (imageDataSampleBuffer != NULL)
+                                                             {
 																 NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
 																 
                                                                  UIImage *image = [[UIImage alloc] initWithData:imageData];
@@ -320,14 +315,6 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
                                                                  tempView.image = saveImage;
                                                                  
-                                                                 /* インジケーター削除 */
-                                                                 [indicator removeFromSuperview];
-                                                                 
-                                                                 /* ローディングビュー削除 */
-                                                                 [loadView removeFromSuperview];
-                                                                 
-                                                                 //mainWindow.userInteractionEnabled = YES;
-
 															 }
 															 else
 																 completionBlock(nil, error);
