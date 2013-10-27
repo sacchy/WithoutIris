@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  WithoutIris
 //
-//  Created by 佐藤 昌樹 on 2013/10/28.
+//  Created by Sacchy on 2013/10/28.
 //  Copyright (c) 2013年 sacchy. All rights reserved.
 //
 
