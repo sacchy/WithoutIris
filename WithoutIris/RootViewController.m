@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "CameraViewController.h"s
 #import "AppMacro.h"
 
 @interface RootViewController ()
@@ -14,6 +15,7 @@
 @end
 
 @implementation RootViewController
+@synthesize cameraViewController;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -69,6 +71,9 @@
     //タップイベントを検知
     self.view.userInteractionEnabled = YES;
     
+    cameraViewController = [[CameraViewController alloc] init];
+    cameraViewController.view.frame = self.view.bounds;
+    [self.view addSubview:cameraViewController.view];
 }
 
 @end

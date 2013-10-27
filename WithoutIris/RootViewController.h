@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CameraViewController;
 
 @interface RootViewController : UIViewController
 
 - (void)buttonEnable;
 - (id)initWithFrame:(CGRect)frame;
+
+@property (strong, nonatomic) CameraViewController *cameraViewController;
 
 @end
