@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F148B2FF181D822F00DA9516 /* Default-h568.png in Resources */ = {isa = PBXBuildFile; fileRef = F148B2FD181D822F00DA9516 /* Default-h568.png */; };
+		F148B300181D822F00DA9516 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F148B2FE181D822F00DA9516 /* Default.png */; };
+		F148B303181D82AE00DA9516 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F148B302181D82AE00DA9516 /* CameraViewController.m */; };
+		F148B30B181D837300DA9516 /* AVCamCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F148B306181D837300DA9516 /* AVCamCaptureManager.m */; };
+		F148B30C181D837300DA9516 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F148B308181D837300DA9516 /* AVCamRecorder.m */; };
+		F148B30D181D837300DA9516 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F148B30A181D837300DA9516 /* AVCamUtilities.m */; };
+		F148B30F181D89DD00DA9516 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F148B30E181D89DD00DA9516 /* CameraViewController.xib */; };
 		F1A5452E181D77A40074E1B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A5452D181D77A40074E1B0 /* Foundation.framework */; };
 		F1A54530181D77A40074E1B0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A5452F181D77A40074E1B0 /* CoreGraphics.framework */; };
 		F1A54532181D77A40074E1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A54531181D77A40074E1B0 /* UIKit.framework */; };
@@ -19,6 +26,7 @@
 		F1A54549181D77A40074E1B0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A54531181D77A40074E1B0 /* UIKit.framework */; };
 		F1A54551181D77A40074E1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A5454F181D77A40074E1B0 /* InfoPlist.strings */; };
 		F1A54553181D77A40074E1B0 /* WithoutIrisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A54552181D77A40074E1B0 /* WithoutIrisTests.m */; };
+		F1A5455E181D7D280074E1B0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A5455D181D7D280074E1B0 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +40,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F148B2FD181D822F00DA9516 /* Default-h568.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-h568.png"; sourceTree = "<group>"; };
+		F148B2FE181D822F00DA9516 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F148B301181D82AE00DA9516 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		F148B302181D82AE00DA9516 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		F148B305181D837300DA9516 /* AVCamCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamCaptureManager.h; sourceTree = "<group>"; };
+		F148B306181D837300DA9516 /* AVCamCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCaptureManager.m; sourceTree = "<group>"; };
+		F148B307181D837300DA9516 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		F148B308181D837300DA9516 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		F148B309181D837300DA9516 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		F148B30A181D837300DA9516 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
+		F148B30E181D89DD00DA9516 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
 		F1A5452A181D77A40074E1B0 /* WithoutIris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WithoutIris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A5452D181D77A40074E1B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F1A5452F181D77A40074E1B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +67,9 @@
 		F1A5454E181D77A40074E1B0 /* WithoutIrisTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WithoutIrisTests-Info.plist"; sourceTree = "<group>"; };
 		F1A54550181D77A40074E1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F1A54552181D77A40074E1B0 /* WithoutIrisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WithoutIrisTests.m; sourceTree = "<group>"; };
+		F1A5455C181D7D280074E1B0 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F1A5455D181D7D280074E1B0 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F1A5455F181D7DAB0074E1B0 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F148B304181D837300DA9516 /* CameraUtil */ = {
+			isa = PBXGroup;
+			children = (
+				F148B305181D837300DA9516 /* AVCamCaptureManager.h */,
+				F148B306181D837300DA9516 /* AVCamCaptureManager.m */,
+				F148B307181D837300DA9516 /* AVCamRecorder.h */,
+				F148B308181D837300DA9516 /* AVCamRecorder.m */,
+				F148B309181D837300DA9516 /* AVCamUtilities.h */,
+				F148B30A181D837300DA9516 /* AVCamUtilities.m */,
+			);
+			path = CameraUtil;
+			sourceTree = "<group>";
+		};
 		F1A54521181D77A40074E1B0 = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +142,16 @@
 		F1A54533181D77A40074E1B0 /* WithoutIris */ = {
 			isa = PBXGroup;
 			children = (
+				F148B304181D837300DA9516 /* CameraUtil */,
+				F1A54560181D7E3E0074E1B0 /* Resource */,
+				F1A5455F181D7DAB0074E1B0 /* AppMacro.h */,
 				F1A5453C181D77A40074E1B0 /* AppDelegate.h */,
 				F1A5453D181D77A40074E1B0 /* AppDelegate.m */,
+				F1A5455C181D7D280074E1B0 /* RootViewController.h */,
+				F1A5455D181D7D280074E1B0 /* RootViewController.m */,
+				F148B301181D82AE00DA9516 /* CameraViewController.h */,
+				F148B302181D82AE00DA9516 /* CameraViewController.m */,
+				F148B30E181D89DD00DA9516 /* CameraViewController.xib */,
 				F1A5453F181D77A40074E1B0 /* Images.xcassets */,
 				F1A54534181D77A40074E1B0 /* Supporting Files */,
 			);
@@ -142,6 +185,15 @@
 				F1A5454F181D77A40074E1B0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1A54560181D7E3E0074E1B0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F148B2FD181D822F00DA9516 /* Default-h568.png */,
+				F148B2FE181D822F00DA9516 /* Default.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +271,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F148B2FF181D822F00DA9516 /* Default-h568.png in Resources */,
 				F1A54538181D77A40074E1B0 /* InfoPlist.strings in Resources */,
 				F1A54540181D77A40074E1B0 /* Images.xcassets in Resources */,
+				F148B300181D822F00DA9516 /* Default.png in Resources */,
+				F148B30F181D89DD00DA9516 /* CameraViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A5453E181D77A40074E1B0 /* AppDelegate.m in Sources */,
+				F148B30D181D837300DA9516 /* AVCamUtilities.m in Sources */,
+				F148B303181D82AE00DA9516 /* CameraViewController.m in Sources */,
+				F148B30C181D837300DA9516 /* AVCamRecorder.m in Sources */,
+				F148B30B181D837300DA9516 /* AVCamCaptureManager.m in Sources */,
 				F1A5453A181D77A40074E1B0 /* main.m in Sources */,
+				F1A5455E181D7D280074E1B0 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +501,7 @@
 				F1A54558181D77A40074E1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1A54559181D77A40074E1B0 /* Build configuration list for PBXNativeTarget "WithoutIrisTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +510,7 @@
 				F1A5455B181D77A40074E1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
